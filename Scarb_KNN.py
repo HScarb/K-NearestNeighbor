@@ -1,7 +1,6 @@
 from numpy import *
 import xlrd     # read xls
 from sklearn import cross_validation
-from sklearn import
 import operator
 
 class KNN:
@@ -35,7 +34,7 @@ class KNN:
     # find the k nearest neighbours
         vote = {}                                       # create the dictionary
         for i in range(K):
-            ith_label = labels[sortdiffidx[i]];
+            ith_label = labels[sortdiffidx[i]]
             vote[ith_label] = vote.get(ith_label,0)+1   #get(ith_label,0) : if dictionary 'vote' exist key 'ith_label', return vote[ith_label]; else return 0
         sortedvote = sorted(vote.items(),key = lambda x:x[1], reverse = True)
         # 'key = lambda x: x[1]' can be substituted by operator.itemgetter(1)
@@ -44,5 +43,5 @@ class KNN:
 k = KNN() #create KNN object
 group, labels = k.loadDataset('dmr_label.txt', 'dmr_data.xls')
 # group,labels = k.createDataset()
-cls = k.KnnClassify([0,0,0,0,0,0,0,0,0,0,0],group,labels,10)
+cls = k.KnnClassify([0 for i in range(11)],group,labels,10)
 print(cls)
