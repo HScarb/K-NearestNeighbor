@@ -7,7 +7,7 @@ iris = datasets.load_iris()
 
 x_train, x_test, y_train, y_test = cross_validation.train_test_split(
     iris.data, iris.target, test_size=0.1, random_state=0)
-# clf = svm.SVC(kernel='linear', C=1).fit(x_train, y_train)
+clf = svm.SVC(kernel='linear', C=1).fit(x_train, y_train)
 clf = RandomForestClassifier()
 # train with randomForest
 print(" training begin...")
